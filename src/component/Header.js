@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-
+import { Link } from "react-router-dom";
 const Container = styled.header`
     background:url("https://media.graphassets.com/WROWKz5tRMaW4u0iTT95");
     background-size:cover;
@@ -119,6 +119,11 @@ const Nav = styled.ul`
     }
     
 `
+const linkStyle = {
+    textDecoration: "none",
+    color: "black"
+
+};
 
 
 export default class Header extends React.Component {
@@ -126,15 +131,17 @@ export default class Header extends React.Component {
         return (
             <Container>
                 <Navegation>
-                
-                <div>
-                    <Logo src="https://media.graphassets.com/K6jZz2E8RBWFUMPsy979" alt="logo RC" />
-                    <Nav>
-                        <li>About</li>
-                        <li>Recipes</li>
-                        <li>Subscribe</li>
-                    </Nav>
-                </div>
+
+                    <div>
+                        <Logo src="https://media.graphassets.com/K6jZz2E8RBWFUMPsy979" alt="logo RC" />
+                        <Nav>
+
+                            <Link style={linkStyle} to="/About"> <li>About</li> </Link>
+                            <Link style={linkStyle} to="/Recipe"> <li>Recipe</li> </Link>
+                            <Link style={linkStyle} to="/Subscribe"> <li>Subscribe</li> </Link>
+
+                        </Nav>
+                    </div>
                 </Navegation>
                 <Title>Recipes</Title>
             </Container>

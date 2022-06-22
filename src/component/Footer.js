@@ -7,7 +7,7 @@ const Container = styled.footer`
     flex-direction:column;
     justify-content:center;
     padding-top:70px;
-    padding-bottom:70px;
+    
     
 `
 const Nav = styled.section`

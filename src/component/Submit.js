@@ -46,19 +46,68 @@ const Button = styled.button`
     @media(max-width:628px){
         width:45%;
     }
+    <Form>
+    <Title>SUBSCRIBE</Title>
+    <P>Sign up for newsletter</P>
+    <Input />
+    <Button>SUBMIT</Button>
+</Form>
 
     `
+
 export default class Submit extends React.Component {
+    state = {
+        newUser: false,
+        name: "",
+    }
+    componentDidMount(){
+        document.title = "Recipes"
+    }
+
+    login = () => {
+        this.setState((login) => ({
+            newUser: true
+        }))
+        localStorage.setItem("newUser",this.state.newUser==true);
+        
+    }
+    handleName = (event) => {
+        this.setState((name) => ({
+            name: event.target.value,
+
+        }))
+        localStorage.setItem("name",this.state.name);
+    }
+  
+    
+
     render() {
         return (
-   
-            <Form>
-                <Title>SUBSCRIBE</Title>
-                <P>Sign up for newsletter</P>
-                <Input />
-                <Button>SUBMIT</Button>
-            </Form>
-          
+            <>
+            
+                
+                {
+                    localStorage.getItem("newUser") === false ? (
+                        <Form>
+                            <Title>SUBSCRIBE</Title>
+                            <P>Sign up for newsletter</P>
+                            <Input value={this.state.name} onChange={this.handleName} />
+                            <Button onClick={this.login}>SUBMIT</Button>
+                        </Form>
+                    ) : (
+                        <Form>
+                            <Title>Bem vindo</Title>
+                            <P>{localStorage.getItem("name")}</P>
+
+
+                        </Form>
+                    )
+                }
+            </>
+
+
+
+
         )
 
     }
