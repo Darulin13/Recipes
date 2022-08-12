@@ -119,11 +119,6 @@ const Nav = styled.ul`
     }
     
 `
-const linkStyle = {
-    textDecoration: "none",
-    color: "black"
-
-};
 
 
 export default class Header extends React.Component {

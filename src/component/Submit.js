@@ -68,7 +68,7 @@ export default class Submit extends React.Component {
         this.setState((login) => ({
             newUser: true
         }))
-        localStorage.setItem("newUser",this.state.newUser==true);
+        localStorage.setItem("newUser",this.state.newUser===true);
         
     }
     handleName = (event) => {
