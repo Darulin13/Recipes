@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+
 const Container = styled.header`
     background:url("https://media.graphassets.com/WROWKz5tRMaW4u0iTT95");
     background-size:cover;
@@ -136,9 +136,9 @@ export default class Header extends React.Component {
                         <Logo src="https://media.graphassets.com/K6jZz2E8RBWFUMPsy979" alt="logo RC" />
                         <Nav>
 
-                            <Link style={linkStyle} to="/About"> <li>About</li> </Link>
-                            <Link style={linkStyle} to="/Recipe"> <li>Recipe</li> </Link>
-                            <Link style={linkStyle} to="/Subscribe"> <li>Subscribe</li> </Link>
+                            <li>About</li>
+                            <li>Recipe</li>
+                            <li>Subscribe</li>
 
                         </Nav>
                     </div>
